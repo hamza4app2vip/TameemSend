@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="واجهة تواصل محسّنة مع بوت التيلجرام" />
+    <title>تواصل مع تميم</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    
+</head>
+<body>
+  <div class="container" role="main" aria-label="واجهة تواصل مع بوت التيلجرام">
+      <div id="replyPreview" style="display:none; background: rgba(255,255,255,0.15); border-radius: 12px; padding: 0.5rem 1rem; margin-bottom: 0.5rem; text-align: right; color: #fff; position: relative;">
+  <span id="replyText" style="font-size: 0.9rem; opacity: 0.85;"></span>
+  <button id="cancelReplyBtn" aria-label="إلغاء الرد" style="background: transparent; border: none; color: var(--error-color); font-weight: 700; cursor: pointer; position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 1.2rem;">&times;</button>
+</div>
+
+    <h1>تواصل مع تميم</h1>
+    <div id="status" class="status" aria-live="polite" aria-atomic="true">جارٍ الاتصال بالبوت...</div>
+    <div id="charCounter" aria-live="polite" style="text-align: left; font-weight: 600; margin-top: 4px; font-family: 'Cairo', sans-serif; user-select: none; color: #fff;">
+  0 / 1000
+</div>
+
+    <input
+      type="text"
+      id="message"
+      placeholder="اكتب رسالتك هنا..."
+      maxlength="1000"
+      aria-label="حقل كتابة الرسالة"
+      autocomplete="off"
+      spellcheck="false"
+    />
+    
+    <button id="sendBtn" aria-label="إرسال الرسالة">إرسال</button>
+    
+    <div id="feedback" class="feedback" aria-live="assertive" aria-atomic="true"></div>
+    
+
+<div class="image-upload-container">
+  <label for="imageInput" class="image-upload-label" data-tippy-content="اختر صورة من جهازك">ارفاق صورة</label>
+  <input type="file" id="imageInput" accept="image/jpeg, image/png, image/jpg" style="display: none;">
+ 
+  <div id="imagePreview" class="image-preview"></div>
+</div>
+
+    
+    <section class="sent-messages-container" aria-label="الرسائل المرسلة">
+      <h2>الرسائل المرسلة</h2>
+      <div id="sentMessagesList" role="list" tabindex="0" aria-live="polite" aria-atomic="true"></div>
+    </section>
+<button id="clearDeletedBtn" aria-label="إزالة كل الرسائل المحذوفة" 
+  style="
+    margin-top: 10px; 
+    padding: 0.7rem 1.5rem; 
+    border-radius: 12px; 
+    border: none; 
+    background: linear-gradient(135deg, #f44336, #d32f2f); 
+    color: white; 
+    font-weight: 600; 
+    cursor: pointer; 
+    box-shadow: 0 4px 15px rgba(244, 67, 54, 0.4);
+    transition: background 0.3s ease;
+    user-select: none;
+  "
+  onmouseover="this.style.background='linear-gradient(135deg, #d32f2f, #b71c1c)';"
+  onmouseout="this.style.background='linear-gradient(135deg, #f44336, #d32f2f)';"
+>
+  إزالة كل الرسائل المحذوفة
+</button>
+
+    
+    <div class="developer-rights" aria-label="حقوق تطوير">
+      بواسطة تميم جميع الحقوق محفوظة  ©2025
+    </div>
+  </div>
+
+ <script src="script.js"></script>
+
+</body>
+</html>
